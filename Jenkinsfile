@@ -5,7 +5,6 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checking out source code'
-                checkout scm
             }
         }
 
@@ -26,9 +25,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying website'
-
                 bat 'docker rm -f html-website 2>NUL || exit /b 0'
-                bat 'docker run -d --name html-website -p 8081:80 jenkins'
+                bat 'docker run -d --name html-website -p 8081:80 html-website'
                 echo 'Website deployed successfully!'
             }
         }
