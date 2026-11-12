@@ -29,7 +29,7 @@ pipeline {
 
                 bat 'docker rm -f html-website 2>NUL || exit /b 0'
 
-                bat 'docker run -d --name html-website -p 8081:80 html-website'
+                bat 'docker run -d --name html-website -p 8081:80 Jenkins'
 
                 echo 'Website deployed successfully!'
             }
