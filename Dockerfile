@@ -1,9 +1,8 @@
-# Use a lightweight Nginx web server 
-FROM nginx:alpine 
- 
-Jenkins CI/CD Practical Guide | HTML, VS Code, GitHub and Docker 
-# Copy the HTML page into the Nginx web directory 
-COPY index.html /usr/share/nginx/html/index.html 
- 
-# Nginx listens on port 80 inside the container 
-EXPOSE 80 
+# Use the Nginx web server image
+FROM nginx:alpine
+
+# Copy the HTML page into the Nginx web directory
+COPY index.html /usr/share/nginx/html/index.html
+
+# Expose port 80
+EXPOSE 80
